@@ -26,7 +26,7 @@ const handlebarOptions = {
 transporter.use("compile", HandleBars(handlebarOptions));
 
 const getMailOptions = ({ name, email, weight, height, bmi }) => ({
-    from: 'julius@gmail.com',
+    from: 'BMI<notifications@bmi.org>',
     to: email,
     subject: `BMI Report`,
     template: 'email-template',
