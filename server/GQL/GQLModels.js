@@ -6,7 +6,9 @@ const UserModel = new GraphQLObjectType({
     fields: () => ({
         name: { type: new GraphQLNonNull(GraphQLString) },
         email: { type: new GraphQLNonNull(GraphQLString) },
-        height: { type: new GraphQLNonNull(GraphQLFloat) }
+        height: { type: new GraphQLNonNull(GraphQLFloat) },
+        weight: { type: new GraphQLNonNull(GraphQLFloat) }
+
     })
 });
 

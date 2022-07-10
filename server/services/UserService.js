@@ -3,21 +3,22 @@ const calculateBMI = (weight, height) => weight / Math.pow(height, 2);
 
 const getBMI = (weight, height) => {
     const bodyMassIndex = calculateBMI(weight, height);
-    let weight;
-    switch (bodyMassIndex) {
-        case bodyMassIndex > 25.0:
-            weight = `overweight`
-            break;
-        case bodyMassIndex >= 18.0 && bodyMassIndex < 24.9:
-            weight = `normal`
-            break;
+    const weightResults = getWeightResults(bodyMassIndex)
 
-        default:
-            weight = `underweight`
-            break;
-    }
-
-    return weight;
+    return weightResults;
 };
+
+const getWeightResults = bmi => {
+    if (bmi > 25.0) {
+        return `overweight`
+
+    } else if (bmi >= 18.0 && bmi < 24.9) {
+
+        return `normal`
+    }
+    else {
+        return `underweight`
+    }
+}
 
 module.exports = { getBMI }

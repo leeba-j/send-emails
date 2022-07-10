@@ -7,6 +7,9 @@ const UserDetailsInputObject = new GraphQLInputObjectType({
         email: { type: GraphQLString },
         height: {
             type: GraphQLFloat
+        },
+        weight: {
+            type: GraphQLFloat
         }
     })
 });

@@ -1,7 +1,7 @@
 const { UserModel } = require('./DBModels');
 
-const createUser = async ({ name, email, height }) => {
-    const user = await UserModel.create({ name, email, height });
+const createUser = async ({ name, email, height, weight }) => {
+    const user = await UserModel.create({ name, email, height, weight });
     return user;
 };
 

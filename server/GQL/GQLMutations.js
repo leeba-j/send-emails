@@ -1,16 +1,16 @@
 const { GraphQLNonNull } = require('graphql')
 const { UserModel } = require('./GQLModels')
-const { createUser } = require('../DB/DBQueries')
-const { UserDetailsInputObject} = require('./GQLInputObjects')
+const { UserDetailsInputObject } = require('./GQLInputObjects')
+const { createdUserAndSendEmail } = require('../services/emailService');
 
 const createUserMutation = {
-    type: UserModel,
+    type: new GraphQLNonNull(UserModel),
     args: {
         userDetails: { type: new GraphQLNonNull(UserDetailsInputObject) }
     },
     resolve(parent, args) {
-        return createUser(args.userDetails)
+        return createdUserAndSendEmail(args.userDetails)
     }
 }
 
-module.exports = { createUserMutation}
+module.exports = { createUserMutation }
