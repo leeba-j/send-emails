@@ -19,7 +19,7 @@ app.use('/api/graphql', graphqlHTTP({
   graphiql: true
 }));
 
-connectDatabase(MONGO_URL)
+connectDatabase(ATLAS_URL)
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
