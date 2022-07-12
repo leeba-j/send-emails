@@ -8,6 +8,6 @@ const UserSchema = new Schema({
 
 });
 
-const UserModel = model('UserModel', UserSchema);
+const UserModel = model('User', UserSchema);
 ;
 module.exports = { UserModel }

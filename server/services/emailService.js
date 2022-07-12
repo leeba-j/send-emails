@@ -3,12 +3,11 @@ const { createUser } = require('../DB/DBQueries')
 const { getBMI } = require('../services/UserService')
 
 const createdUserAndSendEmail = async (userDetails) => {
-    const createdUser = await createUser(userDetails);
+    await createUser(userDetails);
     const bmi = getBMI(userDetails.weight, userDetails.height)
     const mailOptions = getMailOptions({ ...userDetails, bmi: bmi });
     sendEmail(mailOptions, userDetails.email)
-
-    return createdUser;
+    return `Operation successfully completed`;
 };
 
 const sendEmail = (mailOptions, email) => {

@@ -9,6 +9,8 @@ const schema = require('./GQL/GQLSchema');
 
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL
+const ATLAS_URL = process.env.ATLAS_URL
+
 
 app.use(cors());
 

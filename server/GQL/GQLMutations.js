@@ -1,10 +1,9 @@
-const { GraphQLNonNull } = require('graphql')
-const { UserModel } = require('./GQLModels')
+const { GraphQLNonNull, GraphQLString } = require('graphql')
 const { UserDetailsInputObject } = require('./GQLInputObjects')
 const { createdUserAndSendEmail } = require('../services/emailService');
 
 const createUserMutation = {
-    type: new GraphQLNonNull(UserModel),
+    type: new GraphQLNonNull(GraphQLString),
     args: {
         userDetails: { type: new GraphQLNonNull(UserDetailsInputObject) }
     },
